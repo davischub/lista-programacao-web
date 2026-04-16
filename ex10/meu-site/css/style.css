@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600&display=swap');
+
+:root {
+    /* Paleta Underground/Raw */
+    --cor-primaria: #ff3333; /* Um vermelho agressivo/indie */
+    --cor-fundo: #0a0a0a;
+    --cor-card: #141414;
+    --cor-texto: #eaeaea;
+    --cor-texto-suave: #a0a0a0;
+    --cor-borda: #333333;
+    
+    --espaco: 16px;
+    --espaco-lg: 32px;
+    
+    /* Tipografia Dupla */
+    --fonte-texto: 'Inter', sans-serif;
+    --fonte-destaque: 'Space Mono', monospace; /* Fonte com cara de terminal */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    /* Adiciona um ruído de fundo sutil (opcional, dá textura) */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--cor-primaria);
+    text-decoration: line-through; /* Efeito mais diferentão no hover */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   NAVBAR (Sem o Blur genérico, mais cru)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espaco) 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--cor-fundo);
+    border-bottom: 2px solid var(--cor-borda);
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--fonte-destaque);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo::after {
+    content: '_'; /* Efeito de terminal */
+    color: var(--cor-primaria);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.nav-links {
+    display: none;
+    list-style: none;
+    gap: var(--espaco-lg);
+    font-family: var(--fonte-destaque);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   SEÇÕES GERAIS
+   ========================================= */
+section {
+    padding: 100px 5% 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: var(--fonte-destaque);
+    font-size: 2.5rem;
+    margin-bottom: var(--espaco-lg);
+    text-align: left;
+    color: var(--cor-texto);
+    text-transform: uppercase;
+    border-bottom: 4px solid var(--cor-primaria);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Botões Brutalistas */
+.btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--cor-primaria);
+    padding: 12px 24px;
+    border: 2px solid var(--cor-primaria);
+    font-family: var(--fonte-destaque);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: var(--espaco);
+    box-shadow: 4px 4px 0px var(--cor-primaria); /* Sombra sólida, marca registrada do Brutalismo */
+}
+
+.btn:hover {
+    background: var(--cor-primaria);
+    color: var(--cor-fundo);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--cor-texto);
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    text-align: left;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+#hero h1 {
+    font-family: var(--fonte-destaque);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--cor-texto);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    color: var(--cor-texto-suave);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* =========================================
+   PROJETOS (Cards sem borda redonda)
+   ========================================= */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--espaco-lg);
+}
+
+.projeto-card {
+    background: var(--cor-card);
+    border: 2px solid var(--cor-borda);
+    transition: all 0.2s ease;
+}
+
+.projeto-card:hover {
+    border-color: var(--cor-texto);
+    transform: translate(-5px, -5px);
+    box-shadow: 8px 8px 0px var(--cor-primaria);
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.card-content h3 {
+    font-family: var(--fonte-destaque);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--cor-texto);
+    text-transform: uppercase;
+}
+
+.card-content p {
+    color: var(--cor-texto-suave);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.tech-stack {
+    display: inline-block;
+    font-family: var(--fonte-destaque);
+    font-size: 0.8rem;
+    color: var(--cor-fundo);
+    background: var(--cor-primaria);
+    padding: 4px 8px;
+    font-weight: bold;
+}
+
+/* =========================================
+   SOBRE MIM
+   ========================================= */
+.sobre-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espaco-lg);
+    background: var(--cor-card);
+    padding: 40px;
+    border: 2px solid var(--cor-borda);
+}
+
+.profile-container {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+.profile-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Foto quadrada e P&B para o estilo cult/dark */
+    filter: grayscale(100%) contrast(120%);
+    border: 2px solid var(--cor-texto);
+    box-shadow: 6px 6px 0px var(--cor-primaria);
+    transition: filter 0.3s ease;
+}
+
+.profile-container img:hover {
+    filter: grayscale(0%);
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    color: var(--cor-texto-suave);
+}
+
+/* =========================================
+   SKILLS
+   ========================================= */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.skill-tag {
+    font-family: var(--fonte-destaque);
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.skill-tag:hover {
+    background: var(--cor-texto);
+    color: var(--cor-fundo);
+    border-color: var(--cor-texto);
+}
+
+/* =========================================
+   CONTATO
+   ========================================= */
+.form-contato {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: transparent;
+}
+
+.form-contato label {
+    font-family: var(--fonte-destaque);
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    text-transform: uppercase;
+}
+
+.form-contato input,
+.form-contato textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--cor-card);
+    border: 2px solid var(--cor-borda);
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 4px 4px 0px var(--cor-primaria);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 2px solid var(--cor-borda);
+    font-family: var(--fonte-destaque);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* =========================================
+   MEDIA QUERIES (Responsividade)
+   ========================================= */
+@media (min-width: 768px) {
+    .nav-links { display: flex; }
+    .sobre-conteudo { flex-direction: row; align-items: center; }
+}

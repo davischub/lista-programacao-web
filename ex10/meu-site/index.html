@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi Schubert - Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Davi Schubert</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Skills</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Davi Schubert</h1>
+            <p>Desenvolvedor de Software | Foco em Back-end & Mobile</p>
+            <a href="#projetos" class="btn">Ver Projetos</a>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre mim</h2>
+            <div class="sobre-conteudo">
+                <figure class="profile-container">
+                    <img src="images/foto-perfil.jpg" alt="Foto de Davi Schubert">
+                </figure>
+                <div class="sobre-texto">
+                    <p>Olá! Sou estudante do 5º semestre de Análise e Desenvolvimento de Sistemas na Fatec Itapetininga. Tenho forte interesse no desenvolvimento de software, trabalhando com foco na construção de sistemas eficientes e na análise de dados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <div class="projetos-grid">
+                
+                <div class="projeto-card">
+                    <div class="card-content">
+                        <h3>PetPerdido</h3>
+                        <p>Aplicativo mobile focado na localização e resgate de animais perdidos, integrando dados e pesquisa populacional.</p>
+                        <span class="tech-stack">Flutter | Dart</span>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="card-content">
+                        <h3>Ateliê Mãe e Filha</h3>
+                        <p>Sistema de gestão comercial desenvolvido para uma loja de costura, incluindo controle de vendas, cadastros e login.</p>
+                        <span class="tech-stack">C# | PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="card-content">
+                        <h3>Algoritmos & Lógica</h3>
+                        <p>Repositório pessoal com resoluções de desafios de programação, testes de lógica complexos e estruturas de dados.</p>
+                        <span class="tech-stack">C | Python</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <div class="skills">
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">Flutter</span>
+                <span class="skill-tag">Dart</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">SQL Server</span>
+                <span class="skill-tag">Git/GitHub</span>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <form class="form-contato" action="#" method="POST">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como posso ajudar?" required></textarea>
+
+                <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Davi Schubert. Fatec Itapetininga.</p>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+</body>
+</html>
