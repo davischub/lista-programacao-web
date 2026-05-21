@@ -1,7 +1,0 @@
-{
-  "alunos": [
-    { "nome": "Maria", "nota": 9 },
-    { "nome": "João",  "nota": 7 },
-    { "nome": "Ana",   "nota": 5 }
-  ]
-}
