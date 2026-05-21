@@ -1,0 +1,3 @@
+Soma: 15
+É par? false
+Nome: Javascript
