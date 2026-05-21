@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cards de Produtos</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+    h1 { color: #333; }
+
+    .botoes { margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #btn-filtrar { background: #3b82f6; color: white; }
+    #btn-limpar  { background: #ef4444; color: white; }
+    #btn-adicionar { background: #22c55e; color: white; }
+
+    .input-novo {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .input-novo input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    #container { display: flex; flex-wrap: wrap; gap: 16px; }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      width: 180px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card h3 { margin: 0 0 8px; font-size: 16px; color: #222; }
+    .card .preco { font-size: 18px; font-weight: bold; color: #16a34a; }
+    .card .categoria {
+      font-size: 12px;
+      color: white;
+      background: #6366f1;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-top: 8px;
+    }
+
+    .oculto { display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>🛍️ Produtos</h1>
+
+  <div class="input-novo">
+    <input type="text"    id="input-nome"      placeholder="Nome do produto">
+    <input type="number"  id="input-preco"     placeholder="Preço (ex: 199.90)">
+    <input type="text"    id="input-categoria" placeholder="Categoria">
+    <button id="btn-adicionar">➕ Adicionar</button>
+  </div>
+
+  <div class="botoes">
+    <button id="btn-filtrar">📱 Mostrar só eletrônicos</button>
+    <button id="btn-limpar">🗑️ Limpar</button>
+  </div>
+
+  <div id="container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
